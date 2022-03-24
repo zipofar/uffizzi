@@ -1,8 +1,6 @@
 services:
   hello-world:
     build: .
-      args:
-        testarg: uffizzi_test
 
 x-uffizzi:
   ingress:
