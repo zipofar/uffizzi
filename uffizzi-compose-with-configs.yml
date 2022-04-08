@@ -2,9 +2,7 @@ services:
   nginx:
     image: nginx:latest
     configs:
-      - source: ./config2/vote.conf
-        target: /etc/nginx/conf.d
-      - source: ./configs/vote.conf
+      - source: my_config
         target: /etc/nginx/conf.d
 
 continuous_preview:
@@ -15,3 +13,7 @@ continuous_preview:
 ingress:
   service: nginx
   port: 8080
+
+configs:
+  my_config:
+    file: ./configs/vote.conf
