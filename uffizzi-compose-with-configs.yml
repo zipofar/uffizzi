@@ -10,7 +10,7 @@ continuous_preview:
   delete_preview_when_pull_request_is_closed: true
   share_to_github: true
 
-ingress:
+x-uffizzi-ingress:
   service: nginx
   port: 8080
 
