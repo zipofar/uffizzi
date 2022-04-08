@@ -1,0 +1,17 @@
+services:
+  nginx:
+    image: nginx:latest
+    configs:
+      - source: ./config2/vote.conf
+        target: /etc/nginx/conf.d
+      - source: ./configs/vote.conf
+        target: /etc/nginx/conf.d
+
+continuous_preview:
+  deploy_preview_when_pull_request_is_opened: true
+  delete_preview_when_pull_request_is_closed: true
+  share_to_github: true
+
+ingress:
+  service: nginx
+  port: 8080
